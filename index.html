@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
+
+  
+  
 </head>
 <body>
   <section class="banner content">
@@ -27,21 +30,47 @@
   </section>
   <section class="list content">
     <h2>things to get:</h2>
-    <div class="text-field"><input type="text" id="item-entered" placeholder="enter an item"></input></div> <input type="submit" class="add-item" value="add it!"></input>
+    <div class="text-field"><input type="text" name="ite-entered" class="biginput" id="autocomplete" placeholder="enter an item">
+    </div> 
+
+    <input type="submit" class="add-item" value="add it!"></input>
     <ul class="fa-ul">
-      <li class="added"><i class="fa-li fa fa-square-o"></i>milk</li>
-      <span class="hover-color">
-        <li class="hover"><i class="fa-li fa fa-check-square-o list-check"></i>eggs</li>
-      </span>
-      <span class="line-color">
-        <li class="checked-off"><i class="fa-li fa fa-trash"></i>pancake mix</span></li>
+
     </ul>
     <p class="instructions">* Click once to check off your item.<br>* Click again to delete it.</p>
   </section>
+  <form method="post" action="http://smallfactory.info/rebecca/contact.php">
+        <input type="text" name="fullShoppingList" id="fullShoppingList" hidden/>
+        Enter your phone number: <input type="text" name="phoneNumber" id="phoneNumber"/><br>
+        Select your provider: 
+        <select name="provider" id="provider">
+          <option value="@txt.att.net">AT&T</option>
+          <option value="@myboostmobile.com">Boost Mobile</option>
+          <option value="@mymetropcs.com">Metro PCS</option>
+          <option value="@messaging.sprintpcs.com">Sprint</option>
+          <option value="@tmomail.net">T-Mobile</option>
+          <option value="@vtext.com">Verizon</option>
+        </select><br><br>
+        <input type="text" name="txtMsg" id="txtMsg" hidden/>
+              <input type="submit" name="submit" value="Text me my shopping list" class="text-me-button btn" />
+          </form>
   <section class="footer">
+  <a class="js-open-modal btn" href="#" data-modal-id="popup1" style="display:none;"></a>
     <p class="copy">made with <i class="heart">&hearts;</i> in tennessee.</p>
   </section>
   <script src="http://code.jquery.com/jquery.min.js"></script>
   <script src="js/app.js"></script>
+  <!-- jQuery plugin for notifications -->
+  <script src="http://andymatthews.net/code/Sticky/sticky.min.js"></script>
+  <link href='http://andymatthews.net/code/Sticky/sticky.css' rel='stylesheet' type='text/css'>
+  <!-- Auto Complete -->
+   <script src="https://designshack.net/tutorialexamples/html5-autocomplete-suggestions/js/jquery.autocomplete.min.js"></script>
+   <!-- Modal Popup (hidden by default) -->
+  <div id="popup1" class="modal-box">
+  <header> <a href="#" class="js-modal-close close">×</a>
+    <h3>Do you want to remove this item from your list?</h3>
+  </header>
+  <footer> <a href="#" class="btn btn-small js-modal-close">No</a> <a href="#" class="btn btn-small js-modal-close deleteThis">Yes</a></footer>
+</div>
 </body>
 </html>
